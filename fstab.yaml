@@ -1,4 +1,5 @@
 mountpoints:
   /:
-    type: proxy
-    origin: http://localhost:4200
+    url: "https://author-p130360-e1272151.adobeaemcloud.com/bin/franklin.delivery/designer/eds-aem/main"
+    type: "markup"
+    suffix: ".html"
