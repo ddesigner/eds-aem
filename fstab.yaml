@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://content.da.live/ddesigner/new-eds/"
+    url: "https://content.da.live/ddesigner/eds-aem/"
     type: "markup"
     suffix: ".html"
