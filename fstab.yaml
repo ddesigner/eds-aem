@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p130360-e1272151.adobeaemcloud.com/bin/franklin.delivery/designer/eds-aem/main"
+    url: "https://content.da.live/ddesigner/new-eds/"
     type: "markup"
     suffix: ".html"
