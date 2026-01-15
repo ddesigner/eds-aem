@@ -1,6 +1,14 @@
 export default function decorate(block) {
     const [quoteWrapper] = block.children;
+    const [
+        quoteEl,
+        authorEl,
+        showAsHeadingEl,
+        headingTypeEl
+    ] = block.children;
 
+    const selectedHeading = headingTypeEl?.textContent?.trim() || 'h2';
+    console.log('selectedHeading', selectedHeading);
     const blockquote = document.createElement('blockquote');
     blockquote.textContent = quoteWrapper.textContent.trim();
 
