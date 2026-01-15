@@ -222,7 +222,8 @@
         "component":"boolean",
         "label": "Show quote as heading",
         "name":"showAsHeading",
-        "valueType":"boolean"
+        "valueType":"boolean", 
+        "defaultValue": false
       },
       {
         "name": "headingType",
@@ -236,23 +237,16 @@
           { "label": "H5", "value": "h5" },
           { "label": "H6", "value": "h6" }
         ],
-        "condition": {
-          "field": "showAsHeading",
-          "operator": "equals",
-          "value": true
-        }
+        "defaultValue": "h2",
+        "condition": { "===": [{"var" : "showAsHeading"}, true] }
       },
        {
-         "component": "richtext",
+         "component": "textarea",
          "name": "quote",
          "value": "",
          "label": "Quote",
          "valueType": "string",
-         "condition": {
-          "field": "showAsHeading",
-          "operator": "equals",
-          "value": true
-        }
+         "placeholder": "Enter the quote..."
        },
        {
          "component": "text",
