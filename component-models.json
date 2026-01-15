@@ -221,9 +221,7 @@
       {
         "component":"boolean",
         "label": "Show quote as heading",
-        "name":"showAsHeading",
-        "valueType":"boolean", 
-        "defaultValue": false
+        "name":"showAsHeading" 
       },
       {
         "name": "headingType",
@@ -238,15 +236,16 @@
           { "label": "H6", "value": "h6" }
         ],
         "defaultValue": "h2",
-        "condition": { "===": [{"var" : "showAsHeading"}, true] }
+       "condition": {
+          "var": "showAsHeading"
+        }
       },
        {
          "component": "textarea",
          "name": "quote",
          "value": "",
          "label": "Quote",
-         "valueType": "string",
-         "placeholder": "Enter the quote..."
+         "valueType": "string"
        },
        {
          "component": "text",
