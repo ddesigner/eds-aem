@@ -59,3 +59,21 @@
     width: 30px;
     background-color: darkgray;
 }
+
+.block.quote.bg-red {
+    background-color: #cc0000;
+}
+
+.block.quote.bg-green {
+    background-color: #12cf31;
+}
+
+.block.quote.bg-blue {
+    background-color: #2f6ef5;
+}
+
+.block.quote.bg-red,
+.block.quote.bg-green,
+.block.quote.bg-blue {
+    color: #fff;
+}
