@@ -224,6 +224,7 @@
         "name":"showAsHeading" 
       },
       {
+        "component":"select",
         "name": "headingType",
         "type": "select",
         "label": "Heading type",
