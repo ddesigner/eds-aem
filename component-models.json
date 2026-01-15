@@ -219,7 +219,7 @@
     "id": "quote",
     "fields": [
       {
-        "component":"checkbox",
+        "component":"boolean",
         "label": "Show quote as heading",
         "name":"showAsHeading",
         "valueType":"boolean"
