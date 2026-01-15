@@ -218,12 +218,41 @@
   {
     "id": "quote",
     "fields": [
+      {
+        "component":"checkbox",
+        "label": "Show quote as heading",
+        "name":"showAsHeading",
+        "valueType":"boolean"
+      },
+      {
+        "name": "headingType",
+        "type": "select",
+        "label": "Heading type",
+        "options": [
+          { "label": "H1", "value": "h1" },
+          { "label": "H2", "value": "h2" },
+          { "label": "H3", "value": "h3" },
+          { "label": "H4", "value": "h4" },
+          { "label": "H5", "value": "h5" },
+          { "label": "H6", "value": "h6" }
+        ],
+        "condition": {
+          "field": "showAsHeading",
+          "operator": "equals",
+          "value": true
+        }
+      },
        {
          "component": "richtext",
          "name": "quote",
          "value": "",
          "label": "Quote",
-         "valueType": "string"
+         "valueType": "string",
+         "condition": {
+          "field": "showAsHeading",
+          "operator": "equals",
+          "value": true
+        }
        },
        {
          "component": "text",
