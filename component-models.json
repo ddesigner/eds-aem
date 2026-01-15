@@ -217,30 +217,7 @@
   },
   {
     "id": "quote",
-    "fields": [
-      {
-        "component":"boolean",
-        "label": "Show quote as heading",
-        "name":"showAsHeading" 
-      },
-      {
-        "component":"select",
-        "name": "headingType",
-        "type": "select",
-        "label": "Heading type",
-        "options": [
-          { "name": "H1", "value": "h1" },
-          { "name": "H2", "value": "h2" },
-          { "name": "H3", "value": "h3" },
-          { "name": "H4", "value": "h4" },
-          { "name": "H5", "value": "h5" },
-          { "name": "H6", "value": "h6" }
-        ],
-        "defaultValue": "h2",
-       "condition": {
-          "var": "showAsHeading"
-        }
-      },
+    "fields": [ 
        {
          "component": "textarea",
          "name": "quote",
@@ -255,6 +232,29 @@
          "label": "Author",
          "value": ""
        },
+       {
+        "component":"boolean",
+        "label": "Show quote as heading",
+        "name":"showAsHeading" 
+      },
+      {
+        "component":"select",
+        "name": "headingType", 
+        "value":"",
+        "label": "Heading type",
+        "options": [
+          { "label": "H1", "value": "h1" },
+          { "label": "H2", "value": "h2" },
+          { "label": "H3", "value": "h3" },
+          { "label": "H4", "value": "h4" },
+          { "label": "H5", "value": "h5" },
+          { "label": "H6", "value": "h6" }
+        ],
+        "defaultValue": "h2",
+       "condition": {
+          "var": "showAsHeading"
+        }
+      },
        {
         "component":"select",
         "name":"classes",
