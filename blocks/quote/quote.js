@@ -18,6 +18,9 @@ export default async function decorate(block) {
     blockquote.textContent = quoteWrapper.textContent.trim();
 
 
+    //Hide heading tag and checkbox value
+    showAsHeadingEl.style.display = "none";
+    headingTypeEl.style.display = "none";
 
     const allowed = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
     const isValidHeading = showAsHeadingEnable === "true" && selectedHeading && allowed.includes(selectedHeading.toLowerCase());
