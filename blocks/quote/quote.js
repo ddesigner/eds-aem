@@ -7,7 +7,7 @@ export default function decorate(block) {
     ] = block.children;
 
     const selectedHeading = headingTypeEl?.textContent?.trim();
-    const showAsHeadingEnable = showAsHeadingEl?.showAsHeadingEl?.trim();
+    const showAsHeadingEnable = showAsHeadingEl?.textContent?.trim();
 
     console.log('selectedHeading', selectedHeading);
     const blockquote = document.createElement('blockquote');
