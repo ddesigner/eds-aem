@@ -21,6 +21,7 @@ export default async function decorate(block) {
     //Hide heading tag and checkbox value
     showAsHeadingEl.style.display = "none";
     headingTypeEl.style.display = "none";
+    authorEl.classList.add("quote-author");
 
     const allowed = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
     const isValidHeading = showAsHeadingEnable === "true" && selectedHeading && allowed.includes(selectedHeading.toLowerCase());
@@ -47,7 +48,7 @@ export default async function decorate(block) {
     if (quoteSuffix) {
         const suffixEle = document.createElement('p');
         suffixEle.textContent = quoteSuffix;
-        blockquote.appendChild(suffixEle);
+        authorEl.appendChild(suffixEle);
     }
     // quoteWrapper.replaceChildren(blockquote);
 }
