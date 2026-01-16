@@ -1,4 +1,5 @@
 import { fetchPlaceholders } from '../../scripts/placeholders.js';
+import { fetchTaxonomy } from '../../scripts/taxonomy.js';
 
 export default async function decorate(block) {
     const [
@@ -7,8 +8,6 @@ export default async function decorate(block) {
         showAsHeadingEl,
         headingTypeEl
     ] = block.children;
-
-
 
     const selectedHeading = headingTypeEl?.textContent?.trim();
     const showAsHeadingEnable = showAsHeadingEl?.textContent?.trim();
@@ -50,7 +49,14 @@ export default async function decorate(block) {
         suffixEle.textContent = quoteSuffix;
         authorEl.appendChild(suffixEle);
     }
-    // quoteWrapper.replaceChildren(blockquote);
+
+    //Read value from Taxonomy and append in quote  
+    const taxonomy = await fetchTaxonomy();
+    const tagData = taxonomy?.data;
+    if (Array.isArray(tagData) && tagData.length > 0) {
+        const titles = tagData.map(item => item?.title).filter(Boolean);
+        if (titles.length > 0) {
+            block.dataset.tag = titles.join(',');
+        }
+    }
 }
-
-
