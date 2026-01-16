@@ -3,7 +3,8 @@
     "/content/dn-aem-eds/:/",
     "/content/dn-aem-eds/configuration:/.helix/config.json",
     "/content/dn-aem-eds/metadata:/metadata.json",
-     "/content/dn-aem-eds/redirects:/redirects.json"
+     "/content/dn-aem-eds/redirects:/redirects.json",
+     "/content/dn-aem-eds/taxonomy:/taxonomy.json"
   ],
   "includes": [
     "/content/dn-aem-eds/"
