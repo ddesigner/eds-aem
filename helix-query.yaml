@@ -1,5 +1,6 @@
 version: 1
 
+# helix-query.yaml
 indices:
   pages:
     include:
@@ -8,10 +9,12 @@ indices:
       - "/**.json"
     target: query-index.json
     properties:
+      # Last modified from HTML meta (ISO 8601, e.g. 2026-01-18T08:44:36Z)
       lastModified:
-        select: head > meta[property="article:published_time"]
-        value: parseTimestamp(attribute(el, "content"), "YYYY-MM-DDTHH:mm:ssZ")
+        select: head > meta[name="modified-time"]
+        value: attribute(el, "content")
 
+      # Common metadata you already have
       description:
         select: head > meta[name="description"]
         value: attribute(el, "content")
@@ -20,3 +23,8 @@ indices:
         select: head > meta[property="og:title"]
         value: attribute(el, "content")
 
+      # Optional: only if you add this meta to the page head
+      # <meta name="robots" content="index,follow">
+      robots:
+        select: head > meta[name="robots"]
+        value: attribute(el, "content")
