@@ -3,14 +3,20 @@ version: 1
 indices:
   pages:
     include:
-      - '/**'
+      - "/**"
     exclude:
-      - '/**.json'
-    target: /query-index.json
+      - "/**.json"
+    target: query-index.json
     properties:
       lastModified:
-        select: none
-        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
-      robots:
-        select: head > meta[name="robots"]
+        select: head > meta[property="article:published_time"]
+        value: parseTimestamp(attribute(el, "content"), "YYYY-MM-DDTHH:mm:ssZ")
+
+      description:
+        select: head > meta[name="description"]
         value: attribute(el, "content")
+
+      ogTitle:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+

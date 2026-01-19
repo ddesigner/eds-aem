@@ -1,4 +1,6 @@
 import { fetchPlaceholders } from '../../scripts/placeholders.js';
+import { getMetadata } from '../../scripts/aem.js';
+import { loadFragment } from '../fragment/fragment.js';
 import { fetchTaxonomy } from '../../scripts/taxonomy.js';
 
 export default async function decorate(block) {
@@ -6,9 +8,9 @@ export default async function decorate(block) {
         quoteWrapper,
         authorEl,
         showAsHeadingEl,
-        headingTypeEl
+        headingTypeEl,
     ] = block.children;
-
+    console.log(block);
     const selectedHeading = headingTypeEl?.textContent?.trim();
     const showAsHeadingEnable = showAsHeadingEl?.textContent?.trim();
 
@@ -59,4 +61,8 @@ export default async function decorate(block) {
             block.dataset.tag = titles.join(',');
         }
     }
+
+
+    const quoteMata = getMetadata('quote');
+    console.log('tag', quoteMata);
 }
